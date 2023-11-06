@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cinzel', serif;
+  background-color: #f7f7f7;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  width: 75%;
+  max-width: 960px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 4vw;
+  margin: 0.5em 0;
+}
+
+#time, #tries {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+#restart {
+  font-size: 1em;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f2e5d7;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#restart:hover {
+  background-color: #e2d4c8;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 4px solid #f2e5d7;
+  width: 50%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  color: #aaaaaa;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.memory-game {
+  width: 100%;
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+img {
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+}
+
+/* Style dla modalu wpisywania wyników i listy wyników */
+#score-entry-modal .modal-content,
+#high-scores-modal .modal-content {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+
+#score-form {
+  margin-top: 20px;
+}
+
+#score-form input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#score-form button {
+  padding: 10px 20px;
+  background-color: #f2e5d7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#score-form button:hover {
+  background-color: #e2d4c8;
+}
+
+#high-scores-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#high-scores-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 700px) {
+  .modal-content {
+    width: 80%;
+    margin: 20% auto;
+  }
+
+  .memory-game {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1, #time, #tries {
+    font-size: 5vw;
+  }
+}
